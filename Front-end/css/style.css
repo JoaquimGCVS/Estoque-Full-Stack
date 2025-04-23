@@ -3,3 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --cor-primaria: #80002D; 
+    --cor-secundaria: #FFFFFF;
+    --cor-terciaria: #000000;
+    --vermelho-escuro: #4A0D0D;
+    --border-radius: 8px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}

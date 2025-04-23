@@ -5,12 +5,15 @@ body {
 .faixas {
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
 .faixa__logo {
-    flex: 0.4;
-    background-color: aqua;
+    flex: 0.6;
+    background-color: var(--cor-secundaria);
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .faixa__logo img {
@@ -18,8 +21,11 @@ body {
 }
 
 .faixa__login {
-    flex: 0.6;
-    background-color: brown;
+    flex: 0.4;
+    background-color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .form__login {
@@ -27,9 +33,42 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.form__login h1 {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+
+}
+
+.form__login input, .form__login button{
+  width: 22rem;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  font-size: 1rem;
 }
 
 .form__login input{
-    width: 40%;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    outline: none;
+}
+
+.form__login input::placeholder {
+    text-align: left; 
+}
+
+.form__login button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease-in-out;
+    border: 2px solid var(--cor-secundaria)
+}
+
+.form__login button:hover {
+    background-color:#813c54; /* Fundo mais escuro com menos transparência */
+    transform: scale(1.03); /* Efeito de crescimento no hover */
 }
