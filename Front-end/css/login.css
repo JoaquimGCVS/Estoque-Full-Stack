@@ -69,6 +69,6 @@ body {
 }
 
 .form__login button:hover {
-    background-color:#813c54; /* Fundo mais escuro com menos transparência */
-    transform: scale(1.03); /* Efeito de crescimento no hover */
+    background-color:#813c54; 
+    transform: scale(1.03); 
 }
