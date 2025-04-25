@@ -8,10 +8,10 @@
     --cor-primaria: #80002D; 
     --cor-secundaria: #FFFFFF;
     --cor-terciaria: #000000;
-    --vermelho-escuro: #4A0D0D;
+    --cinza: #ecf0f1;
     --border-radius: 8px;
 }
 
-body {
+html,body {
     font-family: Arial, sans-serif;
 }
