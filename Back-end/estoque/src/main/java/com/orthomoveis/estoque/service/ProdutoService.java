@@ -5,6 +5,8 @@ import com.orthomoveis.estoque.repository.ProdutoRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -28,7 +30,8 @@ public class ProdutoService {
     }
 
     public Produto buscarPorId(Long id) {
-        return repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Produto não encontrado."));
+        return repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Produto não encontrado."));
     }
 
     public Produto atualizar(Long id, Produto produtoAtualizado) {
@@ -52,5 +55,47 @@ public class ProdutoService {
     public void remover(Long id) {
         Produto produto = buscarPorId(id);
         repository.delete(produto);
+    }
+
+    public BigDecimal calcularValorTotalEmEstoque() {
+        List<Produto> produtos = repository.findAll();
+        return produtos.stream()
+                .map(p -> p.getValorUnitario().multiply(BigDecimal.valueOf(p.getQuantidadeEstocada())))
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
+
+    public int calcularTotalProdutosEstocados() {
+        List<Produto> produtos = repository.findAll();
+        return produtos.stream()
+                .mapToInt(Produto::getQuantidadeEstocada)
+                .sum();
+    }
+
+    public int calcularTotalProdutosEncomendados() {
+        List<Produto> produtos = repository.findAll();
+        return produtos.stream()
+                .mapToInt(Produto::getQuantidadeEncomendada)
+                .sum();
+    }
+
+    public String buscarProdutoMaisCaro() {
+        return repository.findAll().stream()
+                .max(Comparator.comparing(Produto::getValorUnitario))
+                .map(p -> p.getNome() + " - R$" + p.getValorUnitario())
+                .orElse("Nenhum produto encontrado");
+    }
+
+    public String buscarProdutoMaiorEstoque() {
+        return repository.findAll().stream()
+                .max(Comparator.comparing(Produto::getQuantidadeEstocada))
+                .map(p -> p.getNome() + " - Estoque: " + p.getQuantidadeEstocada())
+                .orElse("Nenhum produto encontrado");
+    }
+
+    public String buscarProdutoMaiorEncomenda() {
+        return repository.findAll().stream()
+                .max(Comparator.comparing(Produto::getQuantidadeEncomendada))
+                .map(p -> p.getNome() + " - Encomendados: " + p.getQuantidadeEncomendada())
+                .orElse("Nenhum produto encontrado");
     }
 }

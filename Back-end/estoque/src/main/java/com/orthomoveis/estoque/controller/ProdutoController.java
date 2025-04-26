@@ -6,6 +6,7 @@ import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -42,5 +43,35 @@ public class ProdutoController {
     public ResponseEntity<Void> remover(@PathVariable Long id) {
         service.remover(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/valor-total-estoque")
+    public ResponseEntity<BigDecimal> calcularValorTotalEmEstoque() {
+        return ResponseEntity.ok(service.calcularValorTotalEmEstoque());
+    }
+
+    @GetMapping("/total-produtos-estocados")
+    public ResponseEntity<Integer> calcularTotalProdutosEstocados() {
+        return ResponseEntity.ok(service.calcularTotalProdutosEstocados());
+    }
+
+    @GetMapping("/total-produtos-encomendados")
+    public ResponseEntity<Integer> calcularTotalProdutosEncomendados() {
+        return ResponseEntity.ok(service.calcularTotalProdutosEncomendados());
+    }
+
+    @GetMapping("/produto-mais-caro")
+    public ResponseEntity<String> buscarProdutoMaisCaro() {
+        return ResponseEntity.ok(service.buscarProdutoMaisCaro());
+    }
+
+    @GetMapping("/produto-maior-estoque")
+    public ResponseEntity<String> buscarProdutoMaiorEstoque() {
+        return ResponseEntity.ok(service.buscarProdutoMaiorEstoque());
+    }
+
+    @GetMapping("/produto-maior-encomenda")
+    public ResponseEntity<String> buscarProdutoMaiorEncomenda() {
+        return ResponseEntity.ok(service.buscarProdutoMaiorEncomenda());
     }
 }
