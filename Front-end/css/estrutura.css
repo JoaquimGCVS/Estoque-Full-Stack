@@ -1,7 +1,6 @@
 html,
 body {
     height: 100%;
-    background-color: var(--cor-secundaria);
 }
 
 .container {
@@ -11,43 +10,62 @@ body {
 }
 
 .container__sidebar {
-    background-color: var(--cinza);
-    color: var(--cor-primaria);
+    background-color: var(--cor-primaria);
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding: 1.5rem 0;
 }
 
-.container__sidebar img {
-    height: auto;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    padding: 1rem;
+.container__sidebar button {
+    background-color: var(--cor-primaria);
+    border: none;
+    outline: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default; 
+}
+
+.container__sidebar button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; 
+}
+
+.container__sidebar button span i {
+    font-size: 5rem;
+    color: var(--cor-secundaria);
+}
+
+.container__sidebar button span i:hover {
+    opacity: 0.7;
 }
 
 .container__sidebar nav {
     display: flex;
     justify-content: center;
+    padding:3rem 0;
 }
 
 .container__sidebar nav ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
     padding: 0 1.5rem;
 }
 
 .container__sidebar nav ul li a {
-    color: var(--cor-terciaria);
+    color: var(--cor-secundaria);
     text-decoration: none;
-    font-weight: bold;
     font-size: 1.3rem;
 }
 
 .container__sidebar nav ul li a:hover {
-    text-decoration: underline;
+    opacity: 0.7;
 }
 
 .nav__linha {
@@ -57,6 +75,11 @@ body {
     justify-content: left;
     color: var(--cor-terciaria);
     font-size: 1.1rem;
+    color: var(--cor-secundaria);
+}
+
+.container__sidebar .active a, .container__sidebar .active i{
+    color: var(--cor-terciaria);
 }
 
 .container__conteudo {
@@ -73,11 +96,16 @@ body {
 .header {
     display: flex;
     align-items: center;
-    justify-content: left;
-    padding: 2rem;
+    justify-content: space-between;
+    padding: 0 2rem 2rem 2rem;
     color: var(--cor-terciaria);
     font-weight: bold;
     border-radius: var(--border-radius);
+}
+
+.header img {
+    height: 5rem;
+    width: auto;
 }
 
 .main {

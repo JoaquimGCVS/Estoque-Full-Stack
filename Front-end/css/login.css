@@ -51,7 +51,7 @@ body {
 }
 
 .form__login input{
-    background-color: var(--cinza);
+    background-color: var(--cor-secundaria);
     color: var(--cor-terciaria);
     outline: none;
     width: 100%;

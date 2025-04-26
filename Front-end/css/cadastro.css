@@ -31,7 +31,6 @@ main {
 }
 
 
-
 .title__group {
     display: flex;
     align-items: center;
@@ -68,6 +67,9 @@ main {
 .form__cadastro button:hover {
     background-color: #660024; 
 }
+
+
+
 
 
 
