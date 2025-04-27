@@ -10,38 +10,63 @@ body {
 }
 
 .container__sidebar {
-    background-color: var(--cor-primaria);
+    background-color: var(--cinza);
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
 }
 
-.container__sidebar button {
-    background-color: var(--cor-primaria);
+
+#botao__perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 6rem; 
+    height: 6rem; 
     border: none;
-    outline: none;
-    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#botao__perfil img {
+    width: 100%; 
+    height: 100%;
+}
+
+.nav__linha {
     display: flex;
-    justify-content: center;
     align-items: center;
-    cursor: default; 
+    gap: 0.8rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative; 
 }
 
-.container__sidebar button span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer; 
+.nav__linha::before {
+    content: '';
+    position: absolute;
+    top: -5px; 
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--cor-terciaria);
+    transition: width 0.3s ease;
 }
 
-.container__sidebar button span i {
-    font-size: 5rem;
-    color: var(--cor-secundaria);
+.nav__linha:hover::before {
+    width: 100%; 
 }
 
-.container__sidebar button span i:hover {
+.nav__linha:hover {
     opacity: 0.7;
+}
+
+.nav__linha img {
+    width: 2rem; 
+    height: 2rem;
 }
 
 .container__sidebar nav {
@@ -59,28 +84,23 @@ body {
 }
 
 .container__sidebar nav ul li a {
-    color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.3rem;;
 }
 
-.container__sidebar nav ul li a:hover {
-    opacity: 0.7;
+.nav__linha.active::before {
+    width: 100%; 
+    background-color: var(--cor-terciaria); 
+    transition: width 0.3s ease, background-color 0.3s ease; 
 }
 
-.nav__linha {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: left;
-    color: var(--cor-terciaria);
-    font-size: 1.1rem;
-    color: var(--cor-secundaria);
+.nav__linha.active {
+    color: var(--cor-terciaria); 
+    transform: scale(1.05); 
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
-.container__sidebar .active a, .container__sidebar .active i{
-    color: var(--cor-terciaria);
-}
 
 .container__conteudo {
     display: grid;
