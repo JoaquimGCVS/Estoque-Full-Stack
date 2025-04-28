@@ -1,0 +1,60 @@
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border-radius: var(--border-radius);
+}
+
+.card__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+}
+
+.botoes__card {
+    display: flex;
+    justify-content: center;
+    gap:3rem;
+}
+
+.excluirProduto {
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+}
+
+#verDetalhes, #editarProduto {
+    outline: none;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+#verDetalhes:hover, #editarProduto:hover, .excluirProduto:hover {
+    opacity: 0.7;
+}
+
+
+
+
+
