@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p>Estocado: ${produto.quantidadeEstocada}</p>
                 <div class="botoes__card">
                 <button id="verDetalhes">Detalhes</button>
-                <button id="editarProduto">Editar</button>
+                <button id="editarProduto" data-id="${produto.id}">Editar</button>
                 </div>
             `;
 
