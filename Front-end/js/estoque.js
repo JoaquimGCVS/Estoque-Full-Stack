@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const cardsContainer = document.getElementById("cardsContainer");
+    const searchBar = document.getElementById("searchBar");
+
+    let produtos = [];
 
     try {
         // Realiza a requisição GET para buscar os produtos
@@ -8,38 +11,53 @@ document.addEventListener("DOMContentLoaded", async () => {
             throw new Error("Erro ao buscar produtos");
         }
 
-        const produtos = await response.json();
+        produtos = await response.json();
 
         // Ordena os produtos em ordem alfabética pelo nome
         produtos.sort((a, b) => a.nome.localeCompare(b.nome));
 
-        // Gera os cards dinamicamente
-        produtos.forEach(produto => {
-            const card = document.createElement("div");
-            card.className = "card";
+        // Função para renderizar os produtos
+        const renderProdutos = (produtosFiltrados) => {
+            cardsContainer.innerHTML = ""; // Limpa os cards existentes
+            produtosFiltrados.forEach(produto => {
+                const card = document.createElement("div");
+                card.className = "card";
 
-            card.innerHTML = `
-                <div class="card__header">
-        <h3>${produto.nome}</h3>
-        <button class="excluirProduto" data-id="${produto.id}">
-            <i class="fas fa-trash"></i> Excluir
-        </button>
-    </div>
-    <div class="linha2"></div>
-    <p>Categoria: ${produto.categoria}</p>
-    <p>Preço Unitário: R$ ${produto.valorUnitario.toFixed(2)}</p>
-    <p>Estocado: ${produto.quantidadeEstocada}</p>
-    <div class="botoes__card">
-        <button id="verDetalhes" class="verDetalhes" data-id="${produto.id}">
-            <i class="fas fa-info-circle"></i> Detalhes
-        </button>
-        <button id="editarProduto" data-id="${produto.id}">
-            <i class="fas fa-edit"></i> Editar
-        </button>
-    </div>
-            `;
+                card.innerHTML = `
+                    <div class="card__header">
+                        <h3>${produto.nome}</h3>
+                        <button class="excluirProduto" data-id="${produto.id}">
+                            <i class="fas fa-trash"></i> Excluir
+                        </button>
+                    </div>
+                    <div class="linha2"></div>
+                    <p>Categoria: ${produto.categoria}</p>
+                    <p>Preço Unitário: R$ ${produto.valorUnitario.toFixed(2)}</p>
+                    <p>Estocado: ${produto.quantidadeEstocada}</p>
+                    <div class="botoes__card">
+                        <button id="verDetalhes" class="verDetalhes" data-id="${produto.id}">
+                            <i class="fas fa-info-circle"></i> Detalhes
+                        </button>
+                        <button id="editarProduto" data-id="${produto.id}">
+                            <i class="fas fa-edit"></i> Editar
+                        </button>
+                    </div>
+                `;
 
-            cardsContainer.appendChild(card);
+                cardsContainer.appendChild(card);
+            });
+        };
+
+        // Renderiza todos os produtos inicialmente
+        renderProdutos(produtos);
+
+        // Adiciona o evento de entrada na barra de pesquisa
+        searchBar.addEventListener("input", (event) => {
+            const searchTerm = event.target.value.toLowerCase();
+            const produtosFiltrados = produtos.filter(produto =>
+                produto.nome.toLowerCase().includes(searchTerm)
+            );
+            renderProdutos(produtosFiltrados);
         });
 
         // Adiciona o evento de clique para excluir o produto

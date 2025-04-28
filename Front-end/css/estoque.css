@@ -22,8 +22,16 @@
 }
 
 .card h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
+}
+
+#searchBar {
+    padding: 8px;
+    font-size: 1.3rem;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: var(--border-radius);
+    width: 45rem;
 }
 
 .linha2 {
@@ -50,10 +58,11 @@ button {
     transition: background-color 0.3s ease;
     border: 2px solid var(--cor-primaria);
     background-color: var(--cinza);
+    font-size: 1rem;
 }
 
 button i {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 button:hover {
