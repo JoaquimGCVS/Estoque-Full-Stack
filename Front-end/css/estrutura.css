@@ -4,17 +4,22 @@ body {
 }
 
 .container {
+    margin-left: 250px; /* Adiciona espaço para o sidebar fixo */
     display: grid;
-    grid-template-columns: 250px 1fr;
-    height: 100vh;
+    grid-template-columns: 1fr; /* Ajusta o layout para o conteúdo principal */
 }
 
 .container__sidebar {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 250px; 
+    height: 100vh; 
     background-color: var(--cinza);
     display: flex;
     flex-direction: column;
-    height: 100vh;
     padding: 2rem 0;
+    z-index: 1000; 
 }
 
 
@@ -36,8 +41,7 @@ body {
 }
 
 #botao__perfil:hover {
-    border-radius: 50%; /* Adiciona um efeito circular */
-    transform: scale(1.1); /* Leve aumento no tamanho */
+    transform: scale(1.05); 
 }
 
 .nav__linha {
@@ -109,8 +113,9 @@ body {
 
 .container__conteudo {
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: 100vh;
+    grid-template-rows: auto 1fr auto; /* Inclui o footer como parte do fluxo */
+    height: auto; /* Permite que a altura seja dinâmica */
+    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos a altura da tela */
     background-color: var(--cor-secundaria);
 }
 
@@ -122,7 +127,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 1rem 2rem;
     color: var(--cor-terciaria);
     font-weight: bold;
     border-radius: var(--border-radius);
@@ -133,6 +138,13 @@ body {
     width: auto;
 }
 
+.linha3 {
+    height: 3px;
+    background-color: var(--cor-primaria); 
+    width: 100%; 
+    margin: 0 0 2rem 0;
+}
+
 .main {
     padding: 0 2rem;
     background-color: var(--cor-secundaria);
@@ -140,7 +152,6 @@ body {
 }
 
 .footer {
-    padding: 1rem;
     text-align: center;
-    background-color: var(--cor-secundaria);
+    margin-top: auto;
 }

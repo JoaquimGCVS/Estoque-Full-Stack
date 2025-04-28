@@ -7,6 +7,7 @@
   <title>OrthomóveisEstoque</title>
   <link rel="stylesheet" href="../css/estoque.css" />
   <link rel="stylesheet" href="../css/modalEditar.css" />
+  <link rel="stylesheet" href="../css/modalDetalhes.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/estrutura.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -34,6 +35,9 @@
             </div>
         </ul>
       </nav>
+      <footer class="footer">
+        <p>© Orthomóveis Colchões</p>
+      </footer>
     </aside>
 
     <div class="container__conteudo">
@@ -42,20 +46,19 @@
         <img src="../assets/LogoSemFundo.png" alt="logo">
       </header>
       <main class="main">
+        <div class="linha3"></div>
         <div class="cards-container" id="cardsContainer">
           <!-- Os cards serão gerados dinamicamente aqui -->
         </div>
       </main>
-      <footer class="footer">
-        <p>© Orthomóveis Colchões</p>
-      </footer>
     </div>
   </div>
 
   <div class="modal" id="modalEditar">
     <div class="modal__content">
       <h2>Editar Produto</h2>
-      <form id="formEditar" class="form__cadastro">
+      <form id="formEditar" class="form__editar">
+        <div class="linha"></div>
         <div class="input__linha">
           <div class="input__group">
             <h3>Nome:</h3>
@@ -98,9 +101,21 @@
     </div>
   </div>
 
+  <!-- Modal de Detalhes -->
+<div class="modal" id="modalDetalhes">
+  <div class="modal__content">
+    <h2>Detalhes do Produto</h2>
+    <div class="linha"></div>
+    <div id="detalhesProduto">
+      <!-- Os detalhes do produto serão preenchidos dinamicamente -->
+    </div>
+    <button type="button" class="botao__fechar" id="fecharModalDetalhes">Fechar</button>
+  </div>
+</div>
 
   <script src="../js/estoque.js"></script>
   <script src="../js/modalEditar.js"></script>
+  <script src="../js/modalDetalhes.js"></script>
 </body>
 
 </html>

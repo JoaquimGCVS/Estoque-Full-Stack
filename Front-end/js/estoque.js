@@ -20,16 +20,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             card.innerHTML = `
                 <div class="card__header">
-                <h3>${produto.nome}</h3>
-                <button class="excluirProduto" data-id="${produto.id}">Excluir</button>
-                </div>
-                <p>Categoria: ${produto.categoria}</p>
-                <p>Preço Unitário: R$ ${produto.valorUnitario.toFixed(2)}</p>
-                <p>Estocado: ${produto.quantidadeEstocada}</p>
-                <div class="botoes__card">
-                <button id="verDetalhes">Detalhes</button>
-                <button id="editarProduto" data-id="${produto.id}">Editar</button>
-                </div>
+        <h3>${produto.nome}</h3>
+        <button class="excluirProduto" data-id="${produto.id}">
+            <i class="fas fa-trash"></i> Excluir
+        </button>
+    </div>
+    <div class="linha2"></div>
+    <p>Categoria: ${produto.categoria}</p>
+    <p>Preço Unitário: R$ ${produto.valorUnitario.toFixed(2)}</p>
+    <p>Estocado: ${produto.quantidadeEstocada}</p>
+    <div class="botoes__card">
+        <button id="verDetalhes" class="verDetalhes" data-id="${produto.id}">
+            <i class="fas fa-info-circle"></i> Detalhes
+        </button>
+        <button id="editarProduto" data-id="${produto.id}">
+            <i class="fas fa-edit"></i> Editar
+        </button>
+    </div>
             `;
 
             cardsContainer.appendChild(card);

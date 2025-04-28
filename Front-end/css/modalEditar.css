@@ -31,11 +31,11 @@
     text-align: left;
 }
 
-.form__cadastro button, .form__cadastro input {
+.form__editar button, .form__editar input {
     padding: 0.8rem 1.5rem;
 }
 
-.form__cadastro {
+.form__editar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,7 +98,7 @@
     color: var(--cor-terciaria);
 }
 
-.form__cadastro button {
+.form__editar button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -114,6 +114,6 @@
     width: 100%; 
 }
 
-.form__cadastro button:hover {
+.form__editar button:hover {
     background-color: #660024;
 }
