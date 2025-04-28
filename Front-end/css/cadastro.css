@@ -48,6 +48,31 @@ main {
     color: #878686; 
 }
 
+.input__group select {
+    width: 30rem;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--cor-terciaria);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: var(--cor-secundaria);
+    color: #878686; 
+    cursor: pointer;
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.input__group select:not(:invalid) {
+    color: var(--cor-terciaria);
+}
+
+.input__group select:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+}
+
+.input__group select option {
+    color: var(--cor-terciaria);
+}
+
 .form__cadastro button {
     display: flex;
     justify-content: center;
