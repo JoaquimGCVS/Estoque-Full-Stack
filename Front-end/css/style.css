@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Caveat', cursive;
 }
 
 :root {
@@ -10,8 +11,4 @@
     --cor-terciaria: #000000;
     --cinza: #DBDBDB;
     --border-radius: 8px;
-}
-
-html,body {
-    font-family: Arial, sans-serif;
 }
