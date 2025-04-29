@@ -4,6 +4,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let produtos = [];
 
+    // Função para formatar a categoria
+    const formatarCategoria = (categoria) => {
+        const categoriasFormatadas = {
+            "COLCHAO_DE_MOLA": "Colchão de Mola",
+            "COLCHAO_DE_ESPUMA": "Colchão de Espuma",
+            "TRAVESSEIRO": "Travesseiro",
+            "BOX": "Box"
+        };
+
+        return categoriasFormatadas[categoria] || categoria; // Retorna o valor formatado ou o original caso não encontre
+    };
+
     try {
         // Realiza a requisição GET para buscar os produtos
         const response = await fetch("http://localhost:8080/produtos");
@@ -26,12 +38,12 @@ document.addEventListener("DOMContentLoaded", async () => {
                 card.innerHTML = `
                     <div class="card__header">
                         <h3>${produto.nome}</h3>
-                        <button id="excluir__produto" class="excluirProduto" data-id="${produto.id}">
+                        <button class="excluir__produto" id="excluir__produto" data-id="${produto.id}">
                             <i class="fas fa-trash"></i>
                         </button>
                     </div>
                     <div class="linha2"></div>
-                    <p><strong>Categoria</strong>: ${produto.categoria}</p>
+                    <p><strong>Categoria</strong>: ${formatarCategoria(produto.categoria)}</p>
                     <p><strong>Valor Unitário</strong>: R$ ${produto.valorUnitario.toFixed(2)}</p>
                     <p><strong>Estocado</strong>: ${produto.quantidadeEstocada}</p>
                     <div class="botoes__card">
@@ -43,6 +55,30 @@ document.addEventListener("DOMContentLoaded", async () => {
                         </button>
                     </div>
                 `;
+
+                // Adiciona o evento de exclusão ao botão
+                card.querySelector(".excluir__produto").addEventListener("click", async (event) => {
+                    const produtoId = event.target.closest("button").getAttribute("data-id");
+                    if (confirm("Tem certeza que deseja excluir este produto?")) {
+                        try {
+                            const deleteResponse = await fetch(`http://localhost:8080/produtos/${produtoId}`, {
+                                method: "DELETE",
+                            });
+
+                            if (deleteResponse.ok) {
+                                alert("Produto excluído com sucesso!");
+                                // Remove o produto da lista e re-renderiza os produtos
+                                produtos = produtos.filter(produto => produto.id !== parseInt(produtoId));
+                                renderProdutos(produtos);
+                            } else {
+                                alert("Erro ao excluir o produto.");
+                            }
+                        } catch (error) {
+                            console.error("Erro ao excluir o produto:", error);
+                            alert("Erro ao conectar com o servidor.");
+                        }
+                    }
+                });
 
                 cardsContainer.appendChild(card);
             });
@@ -60,31 +96,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             renderProdutos(produtosFiltrados);
         });
 
-        // Adiciona o evento de clique para excluir o produto
-        cardsContainer.addEventListener("click", async (event) => {
-            if (event.target.classList.contains("excluirProduto")) {
-                const produtoId = event.target.getAttribute("data-id");
-
-                if (confirm("Tem certeza que deseja excluir este produto?")) {
-                    try {
-                        const deleteResponse = await fetch(`http://localhost:8080/produtos/${produtoId}`, {
-                            method: "DELETE",
-                        });
-
-                        if (deleteResponse.ok) {
-                            alert("Produto excluído com sucesso!");
-                            // Remove o card do DOM
-                            event.target.closest(".card").remove();
-                        } else {
-                            alert("Erro ao excluir o produto.");
-                        }
-                    } catch (error) {
-                        console.error("Erro ao excluir o produto:", error);
-                        alert("Erro ao conectar com o servidor.");
-                    }
-                }
-            }
-        });
     } catch (error) {
         console.error("Erro ao carregar os produtos:", error);
         cardsContainer.innerHTML = "<p>Erro ao carregar os produtos.</p>";
