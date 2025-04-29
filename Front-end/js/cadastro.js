@@ -2,19 +2,37 @@ document.getElementById("botaoAdicionar").addEventListener("click", async (event
     event.preventDefault(); // Evita o comportamento padrão do botão
 
     // Captura os valores do formulário
-    const nome = document.querySelector("input[placeholder='Nome']").value;
-    const categoria = document.getElementById("categoria").value;
-    const quantidadeEstocada = document.querySelector("input[placeholder='Quantidade Estocada']").value;
-    const quantidadeEncomendada = document.querySelector("input[placeholder='Quantidade Encomendada']").value;
-    const valorUnitario = document.querySelector("input[placeholder='Valor Unitário']").value;
-    const codigoProduto = document.querySelector("input[placeholder='Código']").value;
+    const nome = document.querySelector("input[placeholder='Nome']").value.trim();
+    const categoria = document.getElementById("categoria").value.trim();
+    const quantidadeEstocada = document.querySelector("input[placeholder='Quantidade Estocada']").value.trim();
+    const quantidadeEncomendada = document.querySelector("input[placeholder='Quantidade Encomendada']").value.trim();
+    const valorUnitario = document.querySelector("input[placeholder='Valor Unitário']").value.trim();
+    const codigoProduto = document.querySelector("input[placeholder='Código']").value.trim();
+
+    // Lista de campos obrigatórios e suas mensagens
+    const camposObrigatorios = [
+        { campo: nome, mensagem: "O campo Nome é obrigatório." },
+        { campo: categoria, mensagem: "O campo Categoria é obrigatório." },
+        { campo: valorUnitario, mensagem: "O campo Valor Unitário é obrigatório." },
+        { campo: codigoProduto, mensagem: "O campo Código é obrigatório." }
+    ];
+
+    // Verifica quais campos obrigatórios estão vazios
+    const camposNaoPreenchidos = camposObrigatorios.filter(c => !c.campo);
+
+    if (camposNaoPreenchidos.length > 0) {
+        // Exibe as mensagens de erro para os campos não preenchidos
+        const mensagensErro = camposNaoPreenchidos.map(c => c.mensagem).join("\n");
+        alert(`Por favor, preencha os seguintes campos obrigatórios:\n\n${mensagensErro}`);
+        return; // Interrompe o envio se houver campos não preenchidos
+    }
 
     // Cria o objeto do produto
     const produto = {
         nome,
         categoria,
-        quantidadeEstocada: parseInt(quantidadeEstocada),
-        quantidadeEncomendada: parseInt(quantidadeEncomendada),
+        quantidadeEstocada: parseInt(quantidadeEstocada) || 0, // Valores opcionais podem ser 0
+        quantidadeEncomendada: parseInt(quantidadeEncomendada) || 0, // Valores opcionais podem ser 0
         valorUnitario: parseFloat(valorUnitario),
         codigoProduto
     };
@@ -32,7 +50,6 @@ document.getElementById("botaoAdicionar").addEventListener("click", async (event
         if (response.ok) {
             alert("Produto cadastrado com sucesso!");
             // Limpa o formulário
-            // Limpa os campos manualmente
             document.querySelector("input[placeholder='Nome']").value = "";
             document.getElementById("categoria").value = "";
             document.querySelector("input[placeholder='Quantidade Estocada']").value = "";
