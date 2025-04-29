@@ -13,7 +13,7 @@
 }
 
 .card {
-    border: 2px solid var(--cor-terciaria);
+    border: 1px solid var(--cor-terciaria);
     border-radius: var(--border-radius);
     padding: 2rem;
 }
@@ -43,7 +43,7 @@
 }
 
 .visao_geral {
-    width: 31.5%; /* Ajuste o valor conforme necessário */
+    width: 31.5%; 
 }
 
 .card_grafico {

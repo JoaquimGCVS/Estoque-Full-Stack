@@ -15,10 +15,9 @@ body {
     left: 0;
     width: 250px;
     height: 100vh;
-    background-color: var(--cor-primaria); /* Fundo com cor primária */
+    background-color: var(--cor-primaria); 
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
     z-index: 1000;
 }
 
@@ -45,10 +44,10 @@ body {
     align-items: center;
     font-size: 1.2rem;
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha sutil entre os itens */
-    color: var(--cor-secundaria); /* Cor do texto */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+    color: var(--cor-secundaria); 
     text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+    transition: background-color 0.2s ease, color 0.2s ease; 
 }
 
 .nav__linha:last-child {
@@ -56,7 +55,7 @@ body {
 }
 
 .nav__linha:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .container__sidebar nav ul {
@@ -68,7 +67,7 @@ body {
 .container__sidebar nav ul li a {
     text-decoration: none;
     color: inherit;
-    font-weight: 500; /* Peso intermediário para o texto */
+    font-weight: 500; 
 }
 
 .footer {
@@ -84,7 +83,7 @@ body {
     background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
     color: var(--cor-terciaria); /* Cor de destaque para o texto */
     font-weight: 600; /* Peso levemente maior para destacar */
-    border-left: 4px solid var(--cor-terciaria); /* Barra lateral discreta */
+    border-left: 5px solid var(--cor-terciaria); /* Barra lateral discreta */
     transition: background-color 0.2s ease, color 0.2s ease; /* Transições suaves */
 }
 

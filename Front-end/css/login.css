@@ -1,5 +1,8 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body,html {
     height: 100vh;
+    font-family: 'Lato', sans-serif;
 }
 
 .faixas {
@@ -73,7 +76,7 @@ button {
     border-radius: var(--border-radius);
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease-in-out;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
 }
 
 button i {
@@ -82,7 +85,8 @@ button i {
 }
 
 button:hover {
-    background-color: #813c54;
+    background-color: var(--cor-terciaria); 
+    color: var(--cor-secundaria);
 }
 
 .input__group {
