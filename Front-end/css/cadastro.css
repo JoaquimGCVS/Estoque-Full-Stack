@@ -1,5 +1,5 @@
 .form__cadastro button,  .form__cadastro input{
-    padding: 0.8rem 1.5rem;
+    padding: 1.2rem 1.5rem;
 }
 .form__cadastro {
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     gap: 4rem;
-    margin-top: 7rem;
+    margin-top: 6rem;
 }
 
 .input__linha {
@@ -35,9 +35,9 @@
 
 .input__group input {
     width: 30rem; 
-    border: 1px solid var(--cor-terciaria); 
+    border: 2px solid var(--cor-terciaria); 
     border-radius: var(--border-radius); 
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .input__group input::placeholder {
@@ -46,10 +46,10 @@
 
 .input__group select {
     width: 30rem;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid var(--cor-terciaria);
+    padding: 1.2rem 1.5rem;
+    border: 2px solid var(--cor-terciaria);
     border-radius: var(--border-radius);
-    font-size: 1rem;
+    font-size: 1.2rem;
     background-color: var(--cor-secundaria);
     color: #878686; 
     cursor: pointer;
