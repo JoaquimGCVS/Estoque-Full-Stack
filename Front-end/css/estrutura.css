@@ -11,111 +11,88 @@ body {
 
 .container__sidebar {
     position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 250px; 
-    height: 100vh; 
-    background-color: var(--cinza);
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--cor-primaria); /* Fundo com cor primária */
     display: flex;
     flex-direction: column;
-    padding: 2rem 0;
-    z-index: 1000; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+    z-index: 1000;
 }
-
 
 #botao__perfil {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    width: 6rem; 
-    height: 6rem; 
+    margin: 2rem auto;
+    width: 6rem;
+    height: 6rem;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
 #botao__perfil img {
-    width: 100%; 
+    width: 100%;
     height: 100%;
-}
-
-#botao__perfil:hover {
-    transform: scale(1.05); 
+    object-fit: cover; /* Ajusta a imagem para preencher o botão */
 }
 
 .nav__linha {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    font-size: 1.1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-    position: relative; 
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Linha sutil entre os itens */
+    color: var(--cor-secundaria); /* Cor do texto */
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
 }
 
-.nav__linha::before {
-    content: '';
-    position: absolute;
-    top: -5px; 
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-    background-color: var(--cor-terciaria);
-    transition: width 0.3s ease;
-}
-
-.nav__linha:hover::before {
-    width: 100%; 
+.nav__linha:last-child {
+    border-bottom: none; /* Remove a linha do último item */
 }
 
 .nav__linha:hover {
-    opacity: 0.7;
-}
-
-.nav__linha img {
-    width: 2rem; 
-    height: 2rem;
-}
-
-.container__sidebar nav {
-    display: flex;
-    justify-content: center;
-    padding:3rem 0;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo ao passar o mouse */
 }
 
 .container__sidebar nav ul {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 0 1.5rem;
+    padding: 0;
+    margin: 0;
 }
 
 .container__sidebar nav ul li a {
-    color: var(--cor-terciaria);
     text-decoration: none;
-    font-size: 1.3rem;;
+    color: inherit;
+    font-weight: 500; /* Peso intermediário para o texto */
 }
 
-.nav__linha.active::before {
-    width: 100%; 
-    background-color: var(--cor-terciaria); 
-    transition: width 0.3s ease, background-color 0.3s ease; 
+.footer {
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--cor-secundaria);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
-.nav__linha.active {
-    color: var(--cor-terciaria); 
-    transform: scale(1.05); 
-    transition: transform 0.3s ease, color 0.3s ease; 
+.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo sutil */
+    color: var(--cor-terciaria); /* Cor de destaque para o texto */
+    font-weight: 600; /* Peso levemente maior para destacar */
+    border-left: 4px solid var(--cor-terciaria); /* Barra lateral discreta */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transições suaves */
 }
-
 
 .container__conteudo {
     display: grid;
-    grid-template-rows: auto 1fr auto; /* Inclui o footer como parte do fluxo */
-    height: auto; /* Permite que a altura seja dinâmica */
-    min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos a altura da tela */
+    grid-template-rows: auto 1fr auto; 
+    height: auto; 
+    min-height: 100vh; 
     background-color: var(--cor-secundaria);
 }
 
