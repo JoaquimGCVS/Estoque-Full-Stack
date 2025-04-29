@@ -84,9 +84,13 @@ button i {
     color: var(--cor-secundaria);
 }
 
-button:hover {
-    background-color: var(--cor-terciaria); 
-    color: var(--cor-secundaria);
+#botao__entrar:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: var(--cor-terciaria); 
+}
+
+#botao__entrar:hover i{
+    color: var(--cor-terciaria); 
 }
 
 .input__group {

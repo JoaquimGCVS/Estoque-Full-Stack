@@ -127,29 +127,31 @@ body {
     overflow-y: auto;
 }
 
+.sidebar__bottom {
+    margin-top: auto;
+}
+
 .footer {
     text-align: center;
-    margin-top: auto;
 }
 
 #botao__logout {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 1.5rem;
-    background-color: var(--cor-primaria);
+    gap: 0.3rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    background-color: transparent; /* Fundo transparente como o nav__linha */
     color: var(--cor-secundaria);
     border: none;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 1rem auto;
-    width: 80%;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #botao__logout:hover {
-    background-color: var(--cor-terciaria);
-    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo no hover igual ao nav__linha */
+    color: var(--cor-terciaria); /* Cor de destaque no hover */
 }
