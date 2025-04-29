@@ -13,7 +13,7 @@
     background-color: var(--cor-secundaria);
     color: var(--cor-terciaria);
     border-radius: var(--border-radius);
-    border: 1px solid var(--cor-primaria); 
+    border: 1px solid var(--cor-terciaria); 
 }
 
 .card__header {
@@ -61,8 +61,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem; 
-    padding: 0.4rem 1rem;
-    font-size: 1.2rem; 
+    font-size: 1rem; 
     font-weight: 500;
     color: var(--cor-secundaria);
     background-color: var(--cor-primaria);
@@ -105,8 +104,8 @@
 
 /* Botões "Editar" e "Detalhes" */
 #verDetalhes, #editarProduto {
-    background-color: var(--cor-terciaria);
-    color: var(--cor-secundaria);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
     border: none;
 }
 

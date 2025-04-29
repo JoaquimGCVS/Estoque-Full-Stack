@@ -17,6 +17,9 @@
             <button id="botao__perfil">
                 <img src="../assets/perfil_image.png" alt="botao de perfil">
             </button>
+            <button id="botao__logout">
+                <i class="fas fa-sign-out-alt"></i> Sair
+            </button>
             <nav>
                 <ul>
                     <div class="nav__linha">
@@ -45,11 +48,11 @@
                 <div class="form__cadastro" id="formCadastro">
                     <div class="input__linha">
                         <div class="input__group">
-                            
-                            <input type="text" placeholder="Nome" required>
+                            <label for="nome">Nome <span class="obrigatorio">*</span></label>
+                            <input id="nome" type="text" placeholder="Nome" required>
                         </div>
                         <div class="input__group">
-                            
+                            <label for="categoria">Categoria <span class="obrigatorio">*</span></label>
                             <select id="categoria" name="categoria" required>
                                 <option value="" disabled selected>Selecione a Categoria</option>
                                 <option value="COLCHAO_DE_ESPUMA">Colchão de Espuma</option>
@@ -61,22 +64,22 @@
                     </div>
                     <div class="input__linha">
                         <div class="input__group">
-                            
-                            <input type="number" placeholder="Quantidade Estocada" required>
+                            <label for="quantidadeEstocada">Quantidade Estocada</label>
+                            <input id="quantidadeEstocada" type="number" placeholder="Quantidade Estocada">
                         </div>
                         <div class="input__group">
-                            
-                            <input type="number" placeholder="Quantidade Encomendada" required>
+                            <label for="quantidadeEncomendada">Quantidade Encomendada</label>
+                            <input id="quantidadeEncomendada" type="number" placeholder="Quantidade Encomendada">
                         </div>
                     </div>
                     <div class="input__linha">
                         <div class="input__group">
-                            
-                            <input type="number" step="0.01" placeholder="Valor Unitário" required>
+                            <label for="valorUnitario">Valor Unitário <span class="obrigatorio">*</span></label>
+                            <input id="valorUnitario" type="number" step="0.01" placeholder="Valor Unitário" required>
                         </div>
                         <div class="input__group">
-                            
-                            <input type="text" placeholder="Código" required>
+                            <label for="codigo">Código <span class="obrigatorio">*</span></label>
+                            <input id="codigo" type="text" placeholder="Código" required>
                         </div>
                     </div>
                     <button class="botao__adicionar" id="botaoAdicionar"><i class="fa-solid fa-plus"></i>
@@ -88,6 +91,7 @@
     </div>
 
     <script src="../js/cadastro.js"></script>
+    <script src="../js/logout.js"></script>
 </body>
 
 </html>

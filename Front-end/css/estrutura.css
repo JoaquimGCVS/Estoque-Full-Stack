@@ -131,3 +131,25 @@ body {
     text-align: center;
     margin-top: auto;
 }
+
+#botao__logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 1rem auto;
+    width: 80%;
+}
+
+#botao__logout:hover {
+    background-color: var(--cor-terciaria);
+    transform: scale(1.05);
+}

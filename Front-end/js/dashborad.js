@@ -23,13 +23,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 //SEGUNDA LINHA
 
-// Função para formatar os textos dos enums
-function formatarTextoEnum(texto) {
-    return texto
-        .toLowerCase() // Converte para minúsculas
-        .replace(/_/g, " ") // Substitui underscores por espaços
-        .replace(/\b\w/g, (letra) => letra.toUpperCase()); // Capitaliza a primeira letra de cada palavra
-}
+// Função para formatar a categoria
+const formatarCategoria = (categoria) => {
+    const categoriasFormatadas = {
+        "COLCHAO_DE_MOLA": "Colchão de Mola",
+        "COLCHAO_DE_ESPUMA": "Colchão de Espuma",
+        "TRAVESSEIRO": "Travesseiro",
+        "BOX": "Box"
+    };
+
+    return categoriasFormatadas[categoria] || categoria; // Retorna o valor formatado ou o original caso não encontre
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {
@@ -70,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }, {});
 
         // Prepara os dados para o gráfico
-        const labels = Object.keys(categorias).map(formatarTextoEnum); // Formata os textos
+        const labels = Object.keys(categorias).map(formatarCategoria); // Aplica a função aqui
         const data = Object.values(categorias);
 
         // Configura o gráfico de pizza
@@ -113,7 +117,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const total = data.reduce((sum, value) => sum + value, 0);
             const percentage = ((data[index] / total) * 100).toFixed(2);
             const li = document.createElement("li");
-            li.textContent = `${formatarTextoEnum(categoria)}: ${data[index]} (${percentage}%)`;
+            li.textContent = `${formatarCategoria(categoria)}: ${data[index]} (${percentage}%)`; // Aplica a função aqui
             dadosCategorias.appendChild(li);
         });
     } catch (error) {

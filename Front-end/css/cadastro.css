@@ -1,5 +1,5 @@
 .form__cadastro button,  .form__cadastro input{
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.5rem;
 }
 .form__cadastro {
     display: flex;
@@ -7,7 +7,6 @@
     align-items: center;
     justify-content: center;
     gap: 4rem;
-    margin-top: 6rem;
 }
 
 .input__linha {
@@ -37,19 +36,20 @@
     width: 30rem; 
     border: 1px solid var(--cor-terciaria); 
     border-radius: var(--border-radius); 
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .input__group input::placeholder {
     color: #878686; 
+    font-size: 1rem;
 }
 
 .input__group select {
     width: 30rem;
-    padding: 1.2rem 1.5rem;
+    padding: 1rem 1.5rem;
     border: 1px solid var(--cor-terciaria);
     border-radius: var(--border-radius);
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: white;
     color: #878686; 
     cursor: pointer;
@@ -87,6 +87,20 @@
 
 .form__cadastro button:hover {
     background-color: #660024; 
+}
+
+/* Destaca o asterisco dos campos obrigatórios */
+.obrigatorio {
+    color: red;
+    font-weight: bold;
+}
+
+/* Adiciona um estilo para os rótulos */
+.input__group label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
 }
 
 
