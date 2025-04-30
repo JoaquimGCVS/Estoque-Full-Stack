@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <p><strong>Quantidade Estocada:</strong> ${produto.quantidadeEstocada}</p>
                     <p><strong>Quantidade Encomendada:</strong> ${produto.quantidadeEncomendada}</p>
                     <p><strong>Valor Unitário:</strong> R$ ${produto.valorUnitario.toFixed(2)}</p>
+                    <p><strong>Último Valor Unitário:</strong> R$ ${produto.ultimoValorUnitario.toFixed(2)}</p>
                     <p><strong>Código:</strong> ${produto.codigoProduto}</p>
                 </div>
                 `;

@@ -22,6 +22,7 @@ public class ProdutoService {
         if (repository.existsByCodigoProduto(produto.getCodigoProduto())) {
             throw new IllegalArgumentException("Já existe um produto com este código.");
         }
+        produto.setUltimoValorUnitario(produto.getValorUnitario()); // Define o último valor como o valor atual
         return repository.save(produto);
     }
 
@@ -36,19 +37,20 @@ public class ProdutoService {
 
     public Produto atualizar(Long id, Produto produtoAtualizado) {
         Produto existente = buscarPorId(id);
-
+    
         if (!existente.getCodigoProduto().equals(produtoAtualizado.getCodigoProduto())
                 && repository.existsByCodigoProduto(produtoAtualizado.getCodigoProduto())) {
             throw new IllegalArgumentException("Código de produto já cadastrado.");
         }
-
+    
+        existente.setUltimoValorUnitario(existente.getValorUnitario()); // Atualiza o último valor com o valor atual
         existente.setNome(produtoAtualizado.getNome());
         existente.setCategoria(produtoAtualizado.getCategoria());
         existente.setQuantidadeEstocada(produtoAtualizado.getQuantidadeEstocada());
         existente.setQuantidadeEncomendada(produtoAtualizado.getQuantidadeEncomendada());
         existente.setValorUnitario(produtoAtualizado.getValorUnitario());
         existente.setCodigoProduto(produtoAtualizado.getCodigoProduto());
-
+    
         return repository.save(existente);
     }
 

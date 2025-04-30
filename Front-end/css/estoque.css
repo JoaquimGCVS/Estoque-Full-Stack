@@ -1,3 +1,7 @@
+.main {
+    margin-bottom: 2rem;
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -102,7 +106,6 @@
     font-size: 1rem;
 }
 
-/* Botões "Editar" e "Detalhes" */
 #verDetalhes, #editarProduto {
     background-color: var(--cor-secundaria);
     color: var(--cor-primaria);
@@ -110,7 +113,7 @@
 }
 
 #verDetalhes i, #editarProduto i, #excluir__produto i{
-    font-size: 1.2rem; /* Ícones menores */
+    font-size: 1.2rem; 
 }
 
 #verDetalhes:hover, #editarProduto:hover {

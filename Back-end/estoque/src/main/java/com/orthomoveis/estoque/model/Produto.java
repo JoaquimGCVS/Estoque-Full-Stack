@@ -27,6 +27,8 @@ public class Produto {
     @DecimalMin(value = "0.0", inclusive = false, message = "O valor unitário deve ser maior que zero.")
     private BigDecimal valorUnitario;
 
+    private BigDecimal ultimoValorUnitario; 
+
     @Column(nullable = false, unique = true)
     @NotBlank(message = "O código do produto é obrigatório.")
     private String codigoProduto;
@@ -87,5 +89,13 @@ public class Produto {
 
     public void setCodigoProduto(String codigoProduto) {
         this.codigoProduto = codigoProduto;
+    }
+
+    public BigDecimal getUltimoValorUnitario() {
+        return ultimoValorUnitario;
+    }
+
+    public void setUltimoValorUnitario(BigDecimal ultimoValorUnitario) {
+        this.ultimoValorUnitario = ultimoValorUnitario;
     }
 }

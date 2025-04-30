@@ -25,18 +25,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
+    margin: 2rem auto 0;
     width: 6rem;
     height: 6rem;
     border: none;
     background-color: transparent;
-    cursor: pointer;
 }
 
 #botao__perfil img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ajusta a imagem para preencher o botão */
+}
+
+.titulo_adm {
+    display: flex;
+    justify-content: center;
+    color: var(--cor-secundaria);
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
 }
 
 .nav__linha {
