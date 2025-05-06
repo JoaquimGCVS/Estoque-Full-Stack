@@ -15,7 +15,7 @@
 .card {
     border: 1px solid var(--cor-terciaria);
     border-radius: var(--border-radius);
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .card h2 {
@@ -47,7 +47,7 @@
 }
 
 .card_grafico {
-    padding: 1rem;
+    padding: 1.5rem;
     width: 65.8%; 
 }
 
