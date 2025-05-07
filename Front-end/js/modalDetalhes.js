@@ -1,6 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
     const modalDetalhes = document.getElementById("modalDetalhes");
     const fecharModalDetalhes = document.getElementById("fecharModalDetalhes");
+
+    // Função para fechar o modal
+    fecharModalDetalhes.addEventListener("click", () => {
+        modalDetalhes.style.display = "none";
+    });
+});
+
+// Função para formatar a categoria
+const formatarCategoria = (categoria) => {
+    const categoriasFormatadas = {
+        "COLCHAO_DE_MOLA": "Colchão de Mola",
+        "COLCHAO_DE_ESPUMA": "Colchão de Espuma",
+        "TRAVESSEIRO": "Travesseiro",
+        "BOX": "Box"
+    };
+
+    return categoriasFormatadas[categoria] || categoria; // Retorna o valor formatado ou o original caso não encontre
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modalDetalhes = document.getElementById("modalDetalhes");
+    const fecharModalDetalhes = document.getElementById("fecharModalDetalhes");
     const detalhesProduto = document.getElementById("detalhesProduto");
 
     // Função para abrir o modal e preencher os detalhes do produto
@@ -19,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 detalhesProduto.innerHTML = `
                 <div class="texto__detalhes">
                     <p><strong>Nome:</strong> ${produto.nome}</p>
-                    <p><strong>Categoria:</strong> ${produto.categoria}</p>
+                    <p><strong>Categoria:</strong> ${formatarCategoria(produto.categoria)}</p>
                     <p><strong>Quantidade Estocada:</strong> ${produto.quantidadeEstocada}</p>
                     <p><strong>Quantidade Encomendada:</strong> ${produto.quantidadeEncomendada}</p>
                     <p><strong>Valor Unitário:</strong> R$ ${produto.valorUnitario.toFixed(2)}</p>

@@ -59,3 +59,25 @@
 .botao__fechar:hover {
     background-color: #660024;
 }
+
+#detalhesProduto p {
+    font-size: 1.2rem;
+    padding: 0.5rem 0; /* Adiciona espaçamento interno */
+    border-bottom: 1px solid #ccc; /* Linha divisória sutil */
+}
+
+.modal__close {
+    position: absolute;
+    top: 1rem; /* Distância do topo do modal */
+    right: 1rem; /* Distância da borda direita do modal */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--cor-terciaria);
+    cursor: pointer;
+}
+
+.modal__close:hover {
+    color: var(--cor-primaria);
+}
