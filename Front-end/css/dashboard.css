@@ -18,9 +18,16 @@
     padding: 1.5rem;
 }
 
-.card h2 {
-    text-align: center;
+.titulo_principal {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    align-items: center;
     margin-bottom: 0.5rem;
+}
+
+.titulo_principal h2, .titulo_principal i {
+    font-size: 1.3rem;
 }
 
 .card .linha3 {
