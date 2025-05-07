@@ -47,6 +47,16 @@
       <header class="header">
         <h1>Estoque</h1>
         <input type="text" id="searchBar" placeholder="Pesquisar por produtos..." />
+        <div class="filtros">
+        <label for="filtroCategoria"></label>
+        <select id="filtroCategoria">
+          <option value="TODAS" selected>Todos</option>
+          <option value="COLCHAO_DE_ESPUMA">Colchão de Espuma</option>
+          <option value="COLCHAO_DE_MOLA">Colchão de Mola</option>
+          <option value="BOX">Box</option>
+          <option value="TRAVESSEIRO">Travesseiro</option>
+        </select>
+        </div>
         <img src="../assets/LogoSemFundo.png" alt="logo">
       </header>
       <main class="main">
@@ -60,50 +70,50 @@
 
   <div class="modal" id="modalEditar">
     <div class="modal__content">
-      <h2>Editar Produto</h2>
-      <form id="formEditar" class="form__editar">
-        <div class="linha"></div>
-        <div class="input__linha">
-          <div class="input__group">
-            <h3>Nome:</h3>
-            <input type="text" id="editarNome" placeholder="Nome" required>
-          </div>
-          <div class="input__group">
-            <h3>Categoria:</h3>
-            <select id="editarCategoria" required>
-              <option value="" disabled selected>Selecione a Categoria</option>
-              <option value="COLCHAO_DE_ESPUMA">Colchão de Espuma</option>
-              <option value="COLCHAO_DE_MOLA">Colchão de Mola</option>
-              <option value="BOX">Box</option>
-              <option value="TRAVESSEIRO">Travesseiro</option>
-            </select>
-          </div>
-        </div>
-        <div class="input__linha">
-          <div class="input__group">
-            <h3>Quantidade Estocada:</h3>
-            <input type="number" id="editarQuantidadeEstocada" placeholder="Quantidade Estocada" required>
-          </div>
-          <div class="input__group">
-            <h3>Quantidade Encomendada:</h3>
-            <input type="number" id="editarQuantidadeEncomendada" placeholder="Quantidade Encomendada" required>
-          </div>
-        </div>
-        <div class="input__linha">
-          <div class="input__group">
-            <h3>Valor Unitário:</h3>
-            <input type="number" step="0.01" id="editarValorUnitario" placeholder="Valor Unitário" required>
-          </div>
-          <div class="input__group">
-            <h3>Código:</h3>
-            <input type="text" id="editarCodigo" placeholder="Código" required>
-          </div>
-        </div>
-        <button type="submit" class="botao__salvar">Salvar</button>
-        <button type="button" class="botao__fechar" id="fecharModal">Cancelar</button>
-      </form>
+        <button class="modal__close" id="fecharModal">&times;</button>
+        <h2>Editar Produto</h2>
+        <form id="formEditar" class="form__editar">
+            <div class="linha"></div>
+            <div class="input__linha">
+                <div class="input__group">
+                    <h3>Nome:</h3>
+                    <input type="text" id="editarNome" placeholder="Nome" required>
+                </div>
+                <div class="input__group">
+                    <h3>Categoria:</h3>
+                    <select id="editarCategoria" required>
+                        <option value="" disabled selected>Selecione a Categoria</option>
+                        <option value="COLCHAO_DE_ESPUMA">Colchão de Espuma</option>
+                        <option value="COLCHAO_DE_MOLA">Colchão de Mola</option>
+                        <option value="BOX">Box</option>
+                        <option value="TRAVESSEIRO">Travesseiro</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input__linha">
+                <div class="input__group">
+                    <h3>Quantidade Estocada:</h3>
+                    <input type="number" id="editarQuantidadeEstocada" placeholder="Quantidade Estocada" required>
+                </div>
+                <div class="input__group">
+                    <h3>Quantidade Encomendada:</h3>
+                    <input type="number" id="editarQuantidadeEncomendada" placeholder="Quantidade Encomendada" required>
+                </div>
+            </div>
+            <div class="input__linha">
+                <div class="input__group">
+                    <h3>Valor Unitário:</h3>
+                    <input type="number" step="0.01" id="editarValorUnitario" placeholder="Valor Unitário" required>
+                </div>
+                <div class="input__group">
+                    <h3>Código:</h3>
+                    <input type="text" id="editarCodigo" placeholder="Código" required>
+                </div>
+            </div>
+            <button type="submit" class="botao__salvar">Salvar</button>
+        </form>
     </div>
-  </div>
+</div>
 
   <!-- Modal de Detalhes -->
 <div class="modal" id="modalDetalhes">

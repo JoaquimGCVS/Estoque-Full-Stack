@@ -102,7 +102,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
     border: none;
@@ -111,9 +110,30 @@
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 100%; 
+    width: 86.5%; 
+    margin-top: 0.5rem;
 }
 
 .form__editar button:hover {
     background-color: #660024;
+}
+
+.modal__close {
+    position: absolute;
+    top: 1rem; /* Distância do topo do modal */
+    right: 1rem; /* Distância da borda direita do modal */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--cor-terciaria);
+    cursor: pointer;
+}
+
+.modal__close:hover {
+    color: var(--cor-primaria);
+}
+
+.modal__content {
+    position: relative; /* Necessário para posicionar o botão "X" dentro do modal */
 }

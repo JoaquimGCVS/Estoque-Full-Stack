@@ -1,3 +1,8 @@
+document.getElementById("fecharModal").addEventListener("click", () => {
+    const modalEditar = document.getElementById("modalEditar");
+    modalEditar.style.display = "none"; // Fecha o modal
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     const modalEditar = document.getElementById("modalEditar");
     const formEditar = document.getElementById("formEditar");

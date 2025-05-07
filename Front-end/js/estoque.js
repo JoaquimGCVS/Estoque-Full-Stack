@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const cardsContainer = document.getElementById("cardsContainer");
     const searchBar = document.getElementById("searchBar");
+    const filtroCategoria = document.getElementById("filtroCategoria");
 
     let produtos = [];
 
@@ -87,14 +88,23 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Renderiza todos os produtos inicialmente
         renderProdutos(produtos);
 
-        // Adiciona o evento de entrada na barra de pesquisa
-        searchBar.addEventListener("input", (event) => {
-            const searchTerm = event.target.value.toLowerCase();
-            const produtosFiltrados = produtos.filter(produto =>
-                produto.nome.toLowerCase().includes(searchTerm)
-            );
+        // Função para filtrar os produtos
+        const filtrarProdutos = () => {
+            const searchTerm = searchBar.value.toLowerCase();
+            const categoriaSelecionada = filtroCategoria.value;
+
+            const produtosFiltrados = produtos.filter(produto => {
+                const nomeIncluiTermo = produto.nome.toLowerCase().includes(searchTerm);
+                const categoriaCorreta = categoriaSelecionada === "TODAS" || produto.categoria === categoriaSelecionada;
+                return nomeIncluiTermo && categoriaCorreta;
+            });
+
             renderProdutos(produtosFiltrados);
-        });
+        };
+
+        // Adiciona eventos de entrada na barra de pesquisa e mudança no filtro
+        searchBar.addEventListener("input", filtrarProdutos);
+        filtroCategoria.addEventListener("change", filtrarProdutos);
 
     } catch (error) {
         console.error("Erro ao carregar os produtos:", error);
