@@ -1,6 +1,6 @@
 # 🗃️ Sistema de Gerenciamento de Estoque – Joaquim Vilela
 
-Este repositório contém um sistema **full stack** para gerenciamento de estoque, desenvolvido utilizando **Spring Boot** com banco de dados **MySQL** no back-end e **HTML, CSS e JavaScript puro** no front-end.  
+Este repositório contém um sistema **full stack** para gerenciamento de estoque, desenvolvido utilizando **Spring Boot** com banco de dados **MySQL** no back-end e **HTML + CSS e JavaScript** no front-end.  
 A aplicação permite realizar o **cadastro de produtos**, **controle de entrada e saída**, além de acompanhar o **estoque em tempo real** de forma simples e eficiente.
 
 ---
