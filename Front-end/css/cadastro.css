@@ -34,7 +34,8 @@
 
 .input__group input {
     width: 30rem; 
-    border: 1px solid var(--cor-terciaria); 
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    border: none;
     border-radius: var(--border-radius); 
     font-size: 1rem;
 }
@@ -47,7 +48,8 @@
 .input__group select {
     width: 30rem;
     padding: 1rem 1.5rem;
-    border: 1px solid var(--cor-terciaria);
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.12);
+    border: none;
     border-radius: var(--border-radius);
     font-size: 1rem;
     background-color: white;
@@ -86,7 +88,7 @@
 }
 
 .form__cadastro button:hover {
-    background-color: #660024; 
+    opacity: 0.7;
 }
 
 /* Destaca o asterisco dos campos obrigatórios */

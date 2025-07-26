@@ -115,7 +115,7 @@
 }
 
 .form__editar button:hover {
-    background-color: #660024;
+    opacity: 0.7;
 }
 
 .modal__close {

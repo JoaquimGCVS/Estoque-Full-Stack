@@ -8,9 +8,9 @@
 }
 
 :root {
-    --cor-primaria: #B8001F; 
-    --cor-secundaria: #EEEEEE;
-    --cor-terciaria: #000000;
-    --cinza: #E3E3E3;
+    --cor-primaria: #FF6B00;     
+    --cor-secundaria: #FFF8F0;  
+    --cor-terciaria: #1E1E24;    
+    --cinza: #D9D9D9;            
     --border-radius: 8px;
 }

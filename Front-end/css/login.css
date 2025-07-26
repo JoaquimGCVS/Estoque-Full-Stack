@@ -21,6 +21,7 @@ body,html {
 
 .faixa__logo img {
     max-width: 90%;
+    border-radius: var(--border-radius);
 }
 
 .faixa__login {
