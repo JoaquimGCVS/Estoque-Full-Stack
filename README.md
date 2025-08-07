@@ -62,4 +62,13 @@ A aplicação permite realizar o **cadastro de produtos**, **controle de entrada
 
 **Joaquim Guilherme de Carvalho Vilela Silva**  
 Estudante de Engenharia de Software – PUC Minas  
-GitHub: [@JoaquimGCVS](https://github.com/JoaquimGCVS)
+Full-Stack Developer  
+
+🔗 **Links importantes:**
+* GitHub: [@JoaquimGCVS](https://github.com/JoaquimGCVS)  
+* LinkedIn: [Joaquim Vilela](https://www.linkedin.com/in/joaquim-vilela/)  
+* Currículo: [Download PDF](public/Joaquim_Curriculo.pdf)
+
+---
+
+⭐ **Se este projeto te inspirou ou ajudou de alguma forma, deixe uma estrela!**
