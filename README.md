@@ -67,7 +67,6 @@ Full-Stack Developer
 🔗 **Links importantes:**
 * GitHub: [@JoaquimGCVS](https://github.com/JoaquimGCVS)  
 * LinkedIn: [Joaquim Vilela](https://www.linkedin.com/in/joaquim-vilela/)  
-* Currículo: [Download PDF](public/Joaquim_Curriculo.pdf)
 
 ---
 
